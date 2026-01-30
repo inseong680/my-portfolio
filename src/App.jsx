@@ -14,7 +14,7 @@ import ProjectsPage from '@/pages/projects-page';
  */
 function App() {
   return (
-    <BrowserRouter basename="/my-portfolio">
+    <BrowserRouter>
       <div className="min-h-screen bg-background">
         <Navigation />
         <main>
