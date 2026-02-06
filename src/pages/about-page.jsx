@@ -89,7 +89,14 @@ function TabContent({ section }) {
   return (
     <Card>
       <CardContent className="p-6 md:p-8">
-        <h3 className="mb-6 text-xl font-bold text-blue-900">{section.title}</h3>
+        <div className="mb-6">
+          <h3 className="text-xl font-bold text-blue-900">{section.title}</h3>
+          {section.subtitle && (
+            <p className="mt-1 text-sm font-medium text-purple-600 italic">
+              "{section.subtitle}"
+            </p>
+          )}
+        </div>
         <div className="prose prose-gray max-w-none">
           {section.content.split('\n\n').map((paragraph, index) => (
             <p key={index} className="mb-4 text-muted-foreground leading-relaxed whitespace-pre-line">
