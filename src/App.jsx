@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { PortfolioProvider } from '@/contexts/PortfolioContext';
 import Navigation from '@/components/common/navigation';
 import HomePage from '@/pages/home-page';
 import AboutPage from '@/pages/about-page';
@@ -14,18 +15,20 @@ import ProjectsPage from '@/pages/projects-page';
  */
 function App() {
   return (
-    <BrowserRouter>
-      <div className="min-h-screen bg-background">
-        <Navigation />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-          </Routes>
-        </main>
-      </div>
-    </BrowserRouter>
+    <PortfolioProvider>
+      <BrowserRouter>
+        <div className="min-h-screen bg-background">
+          <Navigation />
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+            </Routes>
+          </main>
+        </div>
+      </BrowserRouter>
+    </PortfolioProvider>
   );
 }
 
